@@ -1,0 +1,15 @@
+#about-me{
+  background: rgb(30,54,49);
+  background: linear-gradient(249deg, #1e3631 0%, #0c1314 94%);
+  padding: 10%;
+  width: 100vw;
+  height: 100vh; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#isaiahs-image{
+  height: 30%;
+  width: fit-content;
+}

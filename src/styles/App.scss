@@ -1,0 +1,135 @@
+.App {
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  background: rgb(30,54,49);
+  background: linear-gradient(249deg, #1e3631 0%, #0c1314 94%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+:root {
+  --clr-neon: #c5fffb;
+  --clr-bg: #0c1314;
+  --clr-drk-neon: #1e3631;
+}
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#isaiahs-logo{
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  font-family: "CyberScript";
+  color: #0c1314;
+  text-shadow: 
+  0 0 4px var(--clr-neon),
+  0 0 11px var(--clr-neon),
+  0 0 19px var(--clr-neon),
+  0 0 40px var(--clr-neon),
+  -1px -1px 0 var(--clr-drk-neon),
+  -1px 1px 0 var(--clr-drk-neon),
+  1px -1px 0 var(--clr-drk-neon),
+  1px 1px 0 var(--clr-drk-neon),
+  ;
+  font-size: 50px;
+}
+
+.link-button {
+  font-size: 20px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  border: var(--clr-neon) 0.125em solid;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+  text-shadow: 
+    0 0 .20em #FFF7,
+    0 0 .30em var(--clr-neon);
+  box-shadow: 
+    inset 0 0 .5em var(--clr-neon),
+          0 0 .5em var(--clr-neon);
+  font-family: CyberText;
+  background-color: var(--clr-bg);
+  color: var(--clr-neon);
+}
+
+.link-button::before {
+  content: "";
+  position: absolute;
+  top: 140%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--clr-neon);
+  transform: 
+    perspective(0.2em)
+    rotateX(10deg) 
+    scale(1, 0.35);
+  filter: blur(0.5em);
+  opacity: 0.6;
+  pointer-events: none;
+  transition: opacity 100ms linear;
+}
+
+.link-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--clr-neon);
+  opacity: 0;
+  transition: opacity 100ms linear;
+}
+
+.link-button:hover::after {
+  opacity: 1;
+  z-index: -1;
+}
+.link-button:hover, .link-button:focus {
+  color: white;
+  text-shadow: 2px 2px 3px var(--clr-bg);
+  background-color: var(--clr-neon);
+  box-shadow: 0 0 2em var(--clr-neon);
+}
+.link-button:hover::before {
+  opacity: 0.8;
+}
+
+.welcome-text{
+  color: var(--clr-bg);
+  font-family: "CyberText";
+  animation: flicker 2s infinite alternate;
+}
+
+/* Flickering animation */
+@keyframes flicker {
+    
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+      text-shadow:
+      0 0 4px var(--clr-neon),
+      0 0 11px var(--clr-neon),
+      0 0 19px var(--clr-neon),
+      0 0 22px var(--clr-neon),
+      -1px -1px 0 var(--clr-neon),
+      -1px 1px 0 var(--clr-neon),
+      1px -1px 0 var(--clr-neon),
+      1px 1px 0 var(--clr-neon),
+
+  }
+  
+  20%, 24%, 55% {        
+      text-shadow: none;
+  }    
+}
